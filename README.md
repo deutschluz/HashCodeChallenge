@@ -4,3 +4,10 @@ This repo will contain the all the data files and code for solutions to the Hash
 by Google. 
 
 Only Team 411 members should make pull requests to this repo; any others who so desire can fork this repo.
+
+
+# Convention
+let's have separate directories for each language we choose to
+make a solution.
+
+# Final Solution will be in Java.
