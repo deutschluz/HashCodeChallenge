@@ -7,7 +7,7 @@ Only Team 411 members should make pull requests to this repo; any others who so 
 
 
 # Convention
-let's have separate directories for each language we choose to
+Let's have separate directories for each language we choose to
 make a solution.
 
 # Final Solution will be in Java.
