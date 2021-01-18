@@ -11,3 +11,5 @@ Let's have separate directories for each language we choose to
 make a solution.
 
 # Final Solution will be in Java.
+
+# Check Final dir README to check on current progress
