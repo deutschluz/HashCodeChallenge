@@ -9,7 +9,9 @@
    - [ ] - get at least two small instances of the problem data
    - [ ] - classify and analyze problem
    - [ ] - solve problems by hand
-
+- [ ] - Reach agreement on classification and analysis of problem
+   - [ ] - make a doc called ProposedSolution.md that contains
+           subproblems
 # PHASE 2
 - [ ] - prototype solution in a programming language
 
