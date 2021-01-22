@@ -75,4 +75,5 @@ solutions to produce the best solution from what we can generate.
            non-increasing order also?
 - [ ] - generate X solutions
 - [ ] -  judge and validate generated solutions by focusing
-        on ingreds/team and number of deliveries 
+        on ingreds/team and number of deliveries
+	
