@@ -18,7 +18,7 @@ This is an optimization problem as optimization problems typically require to ma
 - - Rod Cutting
 - - Matrix Chain Multiplication
 - - A combination of matrix chain multiplication and rod cutting might also be used to formulate a solution.
-
+- - The Longest Common Subsequence Problem also comes to mind.
 
 # Final Solution will be in Java
 
