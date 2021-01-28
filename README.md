@@ -17,7 +17,7 @@ This is an optimization problem as optimization problems typically require to ma
 - Related optimization problems from CLRS:
 - - Rod Cutting
 - - Matrix Chain Multiplication
-- - A combination of matric chain multiplication and rod cutting might also be used to formulate a solution.
+- - A combination of matrix chain multiplication and rod cutting might also be used to formulate a solution.
 
 
 # Final Solution will be in Java
