@@ -1,4 +1,4 @@
-# HashCodeChallenge
+# Team 411 HashCodeChallenge
 
 This repo will contain the all the data files and code for solutions to the Hashcode Challenge problem 
 by Google. 
