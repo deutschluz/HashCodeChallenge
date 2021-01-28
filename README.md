@@ -10,6 +10,12 @@ Only Team 411 members should make pull requests to this repo; any others who so 
 Let's have separate directories for each language we choose to
 make a solution.
 
+# Preliminary Solution
+
+This is an optimization problem as optimization problems typically require to maximize or minimize something. The main details are fairly well hidden in the problem statement (this is quite good). The solution will use either dynamic programming, or the greedy strategy. An immediate data structure that comes to mind is a Stack, but a Queue can also possibly be used.
+
 # Final Solution will be in Java.
+
+Language of choice does not matter, however.
 
 # Check Final dir README to check on current progress
