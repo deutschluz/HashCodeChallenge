@@ -12,7 +12,7 @@ make a solution.
 
 # Preliminary Solution
 
-This is an optimization problem as optimization problems typically require to maximize or minimize something. The main details are fairly well hidden in the problem statement (this is quite good). The solution will use either dynamic programming, or the greedy strategy. An immediate data structure that comes to mind is a Stack, but a Queue can also possibly be used.
+This is an optimization problem as optimization problems typically require to maximize or minimize something. The main details are fairly well hidden in the problem statement (this is quite good). The solution will use either dynamic programming, or the greedy strategy. An immediate data structure that comes to mind is a Stack, but a Queue can also possibly be used. As the data sets grow larger and larger, different data structures should be used. A Hash table data structure comes to mind as well.
 
 # Final Solution will be in Java.
 
