@@ -1,13 +1,13 @@
 # Proposed Solution for the HashCode Challenge
 
-- [ ] - process input file
+- [x] - process input file
   - [x] - read first line into 4 separate variables
          numOfPizzas,Doubles,Triples,Quads
-  - [ ] - read rest of file into list
+  - [x] - read rest of file into list
   
-- [ ] - sort pizza list into non-increasing order to prepare for
+- [x] - sort pizza list into non-increasing order to prepare for
         for greedy algorithm
-   - [ ] - possibly sort number of teams ie T2,T3,T4 into
+   - [x] - possibly sort number of teams ie T2,T3,T4 into
            non-increasing order also?
 - [ ] - generate X solutions
   - [ ] - define ROUNDS var to control how many solutions are generated
@@ -21,10 +21,14 @@
    - [ ] - how to count numOfDeliveries?
 - [ ] -  judge and validate generated solutions by focusing
         on ingreds/team and number of deliveries
+   - [ ] - check for and eliminate any duplicates
    - [ ] - check that all members of a team get a pizza or none do.
    - [ ] - calculate and store Ingreds/team and numOfDeliveries
-   - [ ] - if cur_IngredsPerTeam <IngredsPerTeam
-             replace cur_IngredsPerTeam
-	   if iters < ROUNDS
-	      iters=iters+1
-	      start new round.
+   - [ ] - calculate score: 
+   - [ ] - algorithm for iterating through rounds:
+```
+   if cur_IngredsPerTeam <IngredsPerTeam
+      replace cur_IngredsPerTeam
+   if iters < ROUNDS
+      iters=iters+1
+      start new round.
