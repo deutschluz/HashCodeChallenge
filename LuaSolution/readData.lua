@@ -1,3 +1,4 @@
+dbg=require("debugger")
 Stack=require("stack")
 
 function printArray(t)
@@ -37,9 +38,6 @@ function readData(fname1,mode1)
    return M,t2,t3,t4,plist
 end
 
-function writeData(fname1,mode1)
-end
-
 --this is string comparator
 --INPUT: x,y are strings
 -- the first char of str x will be compared to
@@ -57,6 +55,7 @@ function strcomp(x,y)
    else return false
    end
 end
+
 function partition(t,left,right,comp)
   local x=t[right]
   local i=left-1
@@ -132,7 +131,7 @@ function Generator(pizzalist,t2,t3,t4)
 end
 
 function getLastChar(str)
-  local arr= table.unpack(string.find(str,"%w+"))
+  local arr= table.pack(string.find(str,"%w+"))
   return arr[#arr]
 end
 
@@ -152,11 +151,14 @@ function CorrectEval(deliverylist,t2,t3,t4)
        line=tostring(dstack.limit)
      while dstack:depth() > 0 do
       --get last char of deliverylist[i].pop()
-       line = line..tostring(getLastChar(dstack:pop()))
+       if dstack:pop() == nil then break
+       else
+          line = line..tostring(getLastChar(dstack:pop()))
      end
      print(line)
   end
 end
+
 function main()
   local fname="my_sample.dat"
   local mode="r"
