@@ -131,12 +131,16 @@ function Generator(pizzalist,t2,t3,t4)
 end
 
 function getLastChar(str)
-  local arr= table.pack(string.find(str,"%w+"))
-  return arr[#arr]
+  if str == nil then return false end
+  words={}
+  for w in string.gmatch(str,"%w+") do
+     words[#words+1]=w
+  end
+   return words[#words]
 end
 
 function CorrectEval(deliverylist,t2,t3,t4)
- local D=#deliverylist
+  local D=#deliverylist
   --check that 1<= D and D <= t2+t3+t4
   if D < 1 then return false end
   if D > t2+t3+t4 then return false end
@@ -154,12 +158,17 @@ function CorrectEval(deliverylist,t2,t3,t4)
        if dstack:pop() == nil then break
        else
           line = line..tostring(getLastChar(dstack:pop()))
-     end
+       end
      print(line)
+    end
   end
 end
 
 function main()
+  
+  dbg()
+  local gen=Generator
+  local CE=CorrectEval
   local fname="my_sample.dat"
   local mode="r"
   local M,t2,t3,t4=0
@@ -174,9 +183,9 @@ function main()
   print("sorting...")
   qsort(pizzalist,1,#pizzalist,c)
   printArray(pizzalist)
-  local Dlist=false
-  Dlist=Generator(pizzalist,t2,t3,t4)
-  CorrectEval(Dlist,t2,t3,t4)
+  local Dlist={}
+  Dlist=gen(pizzalist,t2,t3,t4)
+  CE(Dlist,t2,t3,t4)
 end
 
 main()
