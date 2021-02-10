@@ -98,30 +98,31 @@ function Generator(pizzalist,t2,t3,t4)
    --use a for loop for each tN
    lim=2
    for i=1,t2 do     
-     local dstack=Stack.new()
+     local dstack=Stack:new()
      dstack.limit=lim
      dlist[i]=dstack  -- make ith elem of dlist an empty stack
    end
    lim=3 --now adding empty stacks for each 3 person team
    for i=#dlist,#dlist+t3 do
-      local dstack=Stack.new()
+      local dstack=Stack:new()
       dstack.limit=lim
       dlist[i]=dstack
    end
    lim=4
    for i=#dlist,#dlist+t4 do
-     local dstack=Stack.new()
+     local dstack=Stack:new()
      dstack.limit=lim
      dlist[i]=dstack
    end
 
   --NOW pushing pizzas onto delivery stacks
     j=#pizzalist
-    for i,dstack in ipairs(dlist) do
+    for i=1,#dlist do
+        local dstack=dlist[i]
          while j > 0 do
-            dstack.push(pizzalist[j])
+            dstack:push(pizzalist[j])
             j=j-1
-            if dstack.depth==dstack.limit then
+            if dstack:depth()==dstack.limit then
                goto continue
             end
 	 end
@@ -136,7 +137,7 @@ function getLastChar(str)
 end
 
 function CorrectEval(deliverylist,t2,t3,t4)
-  --let D=#deliverylist
+ local D=#deliverylist
   --check that 1<= D and D <= t2+t3+t4
   if D < 1 then return false end
   if D > t2+t3+t4 then return false end
@@ -146,11 +147,12 @@ function CorrectEval(deliverylist,t2,t3,t4)
   print(D)
   local line=""
   for i=1,D do
+      dstack=deliverylist[i]
       --format: M P1 P2...; M is size of team; PN is
-       line=tostring(deliverylist[i].limit)
-     while deliverylist[i].depth > 0 do
+       line=tostring(dstack.limit)
+     while dstack:depth() > 0 do
       --get last char of deliverylist[i].pop()
-       line = line..tostring(getLastChar(deliverylist[i].pop()))
+       line = line..tostring(getLastChar(dstack:pop()))
      end
      print(line)
   end
