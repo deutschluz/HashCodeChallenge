@@ -1,3 +1,5 @@
+Stack=require("stack")
+
 function printArray(t)
   for i,v in ipairs(t) do
     print(i,v)
@@ -125,12 +127,34 @@ function Generator(pizzalist,t2,t3,t4)
 	 end
 	 ::continue::
    end
-  return dlist
-
-function CorrectEval(deliverylist)
-
+   return dlist
 end
 
+function getLastChar(str)
+  local arr= table.unpack(string.find(str,"%w+"))
+  return arr[#arr]
+end
+
+function CorrectEval(deliverylist,t2,t3,t4)
+  --let D=#deliverylist
+  --check that 1<= D and D <= t2+t3+t4
+  if D < 1 then return false end
+  if D > t2+t3+t4 then return false end
+  -- check that the number 2 person deliveries is < T2
+  -- check that the number of 3 person deliveries is < T3
+  --print solution
+  print(D)
+  local line=""
+  for i=1,D do
+      --format: M P1 P2...; M is size of team; PN is
+       line=tostring(deliverylist[i].limit)
+     while deliverylist[i].depth > 0 do
+      --get last char of deliverylist[i].pop()
+       line = line..tostring(getLastChar(deliverylist[i].pop()))
+     end
+     print(line)
+  end
+end
 function main()
   local fname="my_sample.dat"
   local mode="r"
@@ -147,7 +171,8 @@ function main()
   qsort(pizzalist,1,#pizzalist,c)
   printArray(pizzalist)
   local Dlist=false
-  Dlist=generator(pizzalist,t2,t3,t4)
+  Dlist=Generator(pizzalist,t2,t3,t4)
+  CorrectEval(Dlist,t2,t3,t4)
 end
 
 main()
