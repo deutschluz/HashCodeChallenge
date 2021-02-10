@@ -10,10 +10,11 @@ function Generator(pizzalist)
 --  to indicate that its full
 -- 3. put empty stacks into DeliveryList
 -- 4  for dstack in DeliveryList do
---       push(pizzalist[i]) onto dstack
---       i=i+1
---       if dstack is full then
---            continue
+         while i < pizzalist.length   
+--         push(pizzalist[i]) onto dstack
+--         i=i+1
+--         if dstack.depth==dstack.limit then
+--            
 -- return DeliveryList
 
 
@@ -24,6 +25,11 @@ function main()
    local RndLim=5 -- controls how many solutions are generated
    local Rounds=0 --
    pizzaOrder= {}  --global ordering of pizzas
+   --read file into pizzaOrder
+   
+
+
+
    while Rounds < RndLim do
      local tentative=generator(pizzalist)
      local final=Correction(tentative)

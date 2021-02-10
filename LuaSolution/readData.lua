@@ -76,6 +76,60 @@ function qsort(t,left,right,comp)
   end
 end
 
+--function that appends the order in which a pizza was
+-- read from file to the end each string
+function AppendRank(plist)  
+  for i=1,#plist do
+    s=plist[i].." "..tostring(i)
+    plist[i]=s
+  end
+  return plist
+end
+
+--Generation Algorithm(pizzalist)
+function Generator(pizzalist,t2,t3,t4)
+   local dlist={} --hold delivery stacks
+-- 2 create delivery stacks for every team
+--  the stacks should have a variable "limit"
+--  to indicate that its full
+-- 3. put empty stacks into DeliveryList
+   --use a for loop for each tN
+   lim=2
+   for i=1,t2 do     
+     local dstack=Stack.new()
+     dstack.limit=lim
+     dlist[i]=dstack  -- make ith elem of dlist an empty stack
+   end
+   lim=3 --now adding empty stacks for each 3 person team
+   for i=#dlist,#dlist+t3 do
+      local dstack=Stack.new()
+      dstack.limit=lim
+      dlist[i]=dstack
+   end
+   lim=4
+   for i=#dlist,#dlist+t4 do
+     local dstack=Stack.new()
+     dstack.limit=lim
+     dlist[i]=dstack
+   end
+
+  --NOW pushing pizzas onto delivery stacks
+    j=#pizzalist
+    for i,dstack in ipairs(dlist) do
+         while j > 0 do
+            dstack.push(pizzalist[j])
+            j=j-1
+            if dstack.depth==dstack.limit then
+               goto continue
+            end
+	 end
+	 ::continue::
+   end
+  return dlist
+
+function CorrectEval(deliverylist)
+
+end
 
 function main()
   local fname="my_sample.dat"
@@ -84,10 +138,16 @@ function main()
   local pizzalist={}
   local c=strcomp  --bring in string comparator to local scope
   M,t2,t3,t4,pizzalist=readData(fname,mode)
+  print("here s the list as is")
+  printArray(pizzalist)
+  AppendRank(pizzalist)
+  print("here s the list with ranks at the end...")
   printArray(pizzalist)
   print("sorting...")
   qsort(pizzalist,1,#pizzalist,c)
   printArray(pizzalist)
+  local Dlist=false
+  Dlist=generator(pizzalist,t2,t3,t4)
 end
 
 main()
